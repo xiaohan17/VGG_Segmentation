@@ -1,7 +1,5 @@
 import torch
 import torch.nn as nn
-from torch.fx.experimental.fx_acc.acc_ops import torch_argmin_mapper
-from torch.nn import Flatten
 
 
 class VGG16(nn.Module):
