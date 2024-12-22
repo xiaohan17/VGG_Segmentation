@@ -52,9 +52,9 @@ class VGG16(nn.Module):
         #     nn.Linear(4096,5)
         # )
         self.upsample=nn.Upsample((128 ,128),mode='nearest')
-        self.decoder=nn.Sequential(nn.Conv2d(512,1,3,1,1),
+        self.decoder=nn.Sequential(nn.Conv2d(512,2,3,1,1),
                                    nn.ReLU(),
-                                   nn.BatchNorm2d(1))
+                                   nn.BatchNorm2d(2))
         self.softmax=nn.Softmax2d()
     def forward(self,x):
         x1=self.stage1(x)
